@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sierra Leone Health Care Portal - Hospitals</title>
+    <link rel="stylesheet" href="hospitals.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">SL HealthCare</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="hospitals.html" class="active">Hospitals</a></li>
+                <li><a href="healthtips.html">health-tips</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h1>Hospitals in Sierra Leone</h1>
+            <p>Find key hospitals across Sierra Leone with essential details.</p>
+        </section>
+
+        <section class="controls">
+            <input type="text" id="searchInput" placeholder="Search by name or location..." />
+            <select id="sortSelect" aria-label="Sort hospitals">
+                <option value="name-asc">Sort by Name (A-Z)</option>
+                <option value="name-desc">Sort by Name (Z-A)</option>
+                <option value="location-asc">Sort by Location (A-Z)</option>
+                <option value="location-desc">Sort by Location (Z-A)</option>
+            </select>
+        </section>
+
+        <section class="hospital-list" id="hospitalList">
+            <article class="hospital-card" data-name="Connaught Hospital" data-location="Freetown">
+                <h2>Connaught Hospital</h2>
+                <p><strong>Location:</strong> Freetown</p>
+                <p><strong>Type:</strong> Referral and Teaching Hospital</p>
+                <p><strong>Contact:</strong> +232 22 222222</p>
+            </article>
+
+            <article class="hospital-card" data-name="Bo Government Hospital" data-location="Bo">
+                <h2>Bo Government Hospital</h2>
+                <p><strong>Location:</strong> Bo</p>
+                <p><strong>Type:</strong> Regional Referral Hospital</p>
+                <p><strong>Contact:</strong> +232 22 333333</p>
+            </article>
+
+            <article class="hospital-card" data-name="Makeni Government Hospital" data-location="Makeni">
+                <h2>Makeni Government Hospital</h2>
+                <p><strong>Location:</strong> Makeni</p>
+                <p><strong>Type:</strong> District Hospital</p>
+                <p><strong>Contact:</strong> +232 22 444444</p>
+            </article>
+
+            <!-- Add more hospital cards here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Sierra Leone Health Care Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="hospitals.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #006644;
+    padding: 20px 40px;
+    color: #fff;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links li a {
+    color: #d4e9e2;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 3px;
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #004d33;
+}
+
+.intro p {
+    font-size: 1.1rem;
+    color: #007a4d;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.controls input[type="text"],
+.controls select {
+    padding: 10px 15px;
+    border: 1.5px solid #006644;
+    border-radius: 6px;
+    font-size: 1rem;
+    min-width: 200px;
+    transition: border-color 0.3s ease;
+}
+
+.controls input[type="text"]:focus,
+.controls select:focus {
+    border-color: #004d33;
+    outline: none;
+}
+
+.hospital-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.hospital-card {
+    background-color: #fff;
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+}
+
+.hospital-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgb(0 0 0 / 0.15);
+}
+
+.hospital-card h2 {
+    color: #006644;
+    margin-bottom: 12px;
+    font-size: 1.5rem;
+}
+
+.hospital-card p {
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+footer {
+    background-color: #006644;
+    color: #d4e9e2;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
