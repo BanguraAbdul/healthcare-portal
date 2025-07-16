@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sierra Leone Healthcare Portal</title>
+  <title>Health Tips | Sierra Leone Healthcare Portal</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
     /* Global Styles */
@@ -136,7 +136,7 @@
     .hero {
       background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
                   url('https://images.unsplash.com/photo-1576091160550-2173dba999ef') no-repeat center center/cover;
-      height: 400px;
+      height: 300px;
       display: flex;
       align-items: center;
       text-align: center;
@@ -146,51 +146,27 @@
     .hero-content {
       max-width: 800px;
       margin: 0 auto;
-      padding: 0 1rem;
     }
     
-    .hero h2 {
+    .hero h1 {
       font-size: 2.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
     }
     
-    .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-    }
-    
-    .btn {
-      display: inline-block;
-      background-color: var(--secondary);
-      color: var(--dark);
-      padding: 0.8rem 1.8rem;
-      border-radius: 50px;
-      font-weight: 600;
-      transition: var(--transition);
-      box-shadow: var(--shadow);
-    }
-    
-    .btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-      background-color: #ffc107;
-    }
-    
-    /* Services Section */
-    .services {
+    /* Health Tips Section */
+    .health-tips-section {
       padding: 4rem 0;
-      background-color: var(--white);
     }
     
-    .services h3 {
+    .section-title {
       text-align: center;
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: var(--primary);
       margin-bottom: 3rem;
       position: relative;
     }
     
-    .services h3:after {
+    .section-title:after {
       content: '';
       display: block;
       width: 80px;
@@ -199,72 +175,66 @@
       margin: 0.5rem auto 0;
     }
     
-    .service-cards {
+    .tips-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
     }
     
-    .card {
-      background: var(--light);
+    .tip-card {
+      background: var(--white);
       border-radius: 10px;
-      padding: 2rem;
-      text-align: center;
+      overflow: hidden;
       box-shadow: var(--shadow);
       transition: var(--transition);
     }
     
-    .card:hover {
+    .tip-card:hover {
       transform: translateY(-10px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
     
-    .card img {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 1.5rem;
-      object-fit: contain;
+    .tip-card img {
+      height: 200px;
+      width: 100%;
+      object-fit: cover;
     }
     
-    .card h4 {
+    .tip-content {
+      padding: 1.5rem;
+    }
+    
+    .tip-card h3 {
       color: var(--primary);
       font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .tip-card p {
+      color: var(--gray);
       margin-bottom: 1rem;
     }
     
-    .card p {
-      color: var(--gray);
+    .read-more {
+      display: inline-block;
+      color: var(--primary);
+      font-weight: 600;
+      transition: var(--transition);
     }
     
-    /* About Section */
-    .about {
-      padding: 4rem 0;
-      background-color: var(--primary-light);
-      color: var(--white);
-      text-align: center;
-    }
-    
-    .about h3 {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    .about p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1rem;
+    .read-more:hover {
+      color: var(--primary-light);
     }
     
     /* Footer */
-    footer {
+    .footer {
       background-color: var(--dark);
       color: var(--white);
       padding: 2rem 0;
       text-align: center;
     }
     
-    footer p {
+    .footer p {
       margin-bottom: 0;
     }
     
@@ -297,19 +267,11 @@
         display: block;
       }
       
-      .hero {
-        height: 350px;
-      }
-      
-      .hero h2 {
+      .hero h1 {
         font-size: 2rem;
       }
       
-      .hero p {
-        font-size: 1rem;
-      }
-      
-      .services h3, .about h3 {
+      .section-title {
         font-size: 1.8rem;
       }
     }
@@ -340,17 +302,16 @@
   </style>
 </head>
 <body>
-
-  <!-- Navbar -->
+  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="container">
-      <h1 class="logo"><i class="fas fa-heartbeat"></i>SL Health Portal</h1>
+      <h1 class="logo"><i class="fas fa-heartbeat"></i>Sierra Leone Health</h1>
       <nav>
         <ul class="nav-links">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="healthtips.html">Health Tips</a></li>
-          <li><a href="#">Hospitals</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="healthtips.html" class="active">Health Tips</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
         <div class="burger">
           <div class="line1"></div>
@@ -364,48 +325,72 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h2>Welcome to Sierra Leone's Healthcare Resource Portal</h2>
-      <p>Your one-stop access to trusted health tips, hospital data, and emergency care information.</p>
-      <a href="#" class="btn">Explore Services</a>
+      <h1>Your Guide to Better Health</h1>
+      <p>Practical tips for maintaining a healthy lifestyle in Sierra Leone</p>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="services">
+  <!-- Health Tips Section -->
+  <section class="health-tips-section">
     <div class="container">
-      <h3>Our Key Resources</h3>
-      <div class="service-cards">
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/2920/2920215.png" alt="Health Tips Icon" />
-          <h4>Health Tips</h4>
-          <p>Stay informed with daily tips on nutrition, hygiene, and disease prevention tailored to local needs.</p>
+      <h2 class="section-title">Stay Healthy with These Tips</h2>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="Drink water" />
+          <div class="tip-content">
+            <h3>Stay Hydrated</h3>
+            <p>Drink at least 8 glasses of clean water daily to keep your body and brain functioning well. In Sierra Leone's tropical climate, proper hydration is especially important.</p>
+            <a href="#" class="read-more">Learn more →</a>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Hospital Icon" />
-          <h4>Hospital Directory</h4>
-          <p>Find hospitals and health centers across Sierra Leone by location and available services.</p>
+        <div class="tip-card">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Healthy food" />
+          <div class="tip-content">
+            <h3>Eat Balanced Meals</h3>
+            <p>Include locally available vegetables, fruits, proteins, and whole grains in your daily diet to boost immunity and maintain energy levels.</p>
+            <a href="#" class="read-more">Learn more →</a>
+          </div>
         </div>
-        <div class="card">
-          <img src="https://cdn-icons-png.flaticon.com/512/3050/3050466.png" alt="Emergency Icon" />
-          <h4>Emergency Support</h4>
-          <p>Get quick access to ambulance services, hotlines, and emergency instructions when it matters most.</p>
+        <div class="tip-card">
+          <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1" alt="Exercise" />
+          <div class="tip-content">
+            <h3>Exercise Regularly</h3>
+            <p>Engage in at least 30 minutes of physical activity every day. Walking, dancing, or playing sports are great ways to stay active in our communities.</p>
+            <a href="#" class="read-more">Learn more →</a>
+          </div>
+        </div>
+        <div class="tip-card">
+          <img src="https://images.unsplash.com/photo-1601979031925-3ccde2f944e3" alt="Sleep well" />
+          <div class="tip-content">
+            <h3>Get Enough Sleep</h3>
+            <p>Aim for 7–8 hours of quality sleep every night to help your body recover, improve mental health, and maintain optimal daily functioning.</p>
+            <a href="#" class="read-more">Learn more →</a>
+          </div>
+        </div>
+        <div class="tip-card">
+          <img src="https://images.unsplash.com/photo-1583947582886-f3f6f52d2d3b" alt="Wash hands" />
+          <div class="tip-content">
+            <h3>Wash Your Hands</h3>
+            <p>Practice frequent handwashing with soap and clean water, especially before eating, after using the toilet, and when returning home.</p>
+            <a href="#" class="read-more">Learn more →</a>
+          </div>
+        </div>
+        <div class="tip-card">
+          <img src="https://images.unsplash.com/photo-1588776814546-bc3d3c1aa3a3" alt="Doctor visit" />
+          <div class="tip-content">
+            <h3>Preventive Healthcare</h3>
+            <p>Schedule regular checkups, vaccinations, and screenings for early detection of health issues. Many conditions are more treatable when caught early.</p>
+            <a href="#" class="read-more">Learn more →</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About Section -->
-  <section class="about">
-    <div class="container">
-      <h3>Our Mission</h3>
-      <p>We aim to improve public health awareness and accessibility by providing accurate, centralized healthcare information. Empowering citizens through digital tools is at the core of our mission.</p>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer>
+  <footer class="footer">
     <div class="container">
-      <p>© 2025 Sierra Leone Health Portal. All rights reserved.</p>
+      <p>&copy; 2025 Sierra Leone Healthcare Portal. All rights reserved.</p>
     </div>
   </footer>
 
@@ -431,6 +416,5 @@
       burger.classList.toggle('toggle');
     });
   </script>
-
 </body>
 </html>
