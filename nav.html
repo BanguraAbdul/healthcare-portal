@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Healthcare Resource Portal</title>
+  <link rel="stylesheet" href="nav.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">Sierra Leone Health</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="health-tips.html">Health Tips</a></li>
+          <li><a href="hospitals.html">Hospitals</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <script>
+    // Simple burger toggle
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+    });
+  </script>
+</body>
+</html>
