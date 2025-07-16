@@ -4,25 +4,337 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sierra Leone Health Care Portal - Hospitals</title>
-    <link rel="stylesheet" href="hospitals.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+    /* Global Styles */
+    :root {
+      --primary: #2a7f62;
+      --primary-light: #3cb08f;
+      --secondary: #f8b400;
+      --dark: #1a1a2e;
+      --light: #f8f9fa;
+      --danger: #e63946;
+      --white: #ffffff;
+      --gray: #6c757d;
+      --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background-color: #f5f7fa;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    h1, h2, h3, h4 {
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    /* Navigation */
+    header {
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo i {
+      margin-right: 0.5rem;
+      color: var(--secondary);
+    }
+    
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-links li {
+      margin-left: 2rem;
+    }
+    
+    .nav-links a {
+      font-weight: 500;
+      padding: 0.5rem 0;
+      position: relative;
+      transition: var(--transition);
+    }
+    
+    .nav-links a:hover {
+      color: var(--secondary);
+    }
+    
+    .nav-links a.active {
+      color: var(--secondary);
+    }
+    
+    .nav-links a.active:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--secondary);
+    }
+    
+    .burger {
+      display: none;
+      cursor: pointer;
+    }
+    
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: var(--white);
+      margin: 5px;
+      transition: var(--transition);
+    }
+    
+    /* Main Content */
+    main {
+      padding: 2rem 0;
+    }
+    
+    /* Intro Section */
+    .intro {
+      text-align: center;
+      padding: 3rem 0;
+      background: linear-gradient(rgba(42, 127, 98, 0.9), rgba(42, 127, 98, 0.9)), 
+                  url('https://images.unsplash.com/photo-1579684385127-1ef15d508118') no-repeat center center/cover;
+      color: var(--white);
+      margin-bottom: 2rem;
+      border-radius: 10px;
+    }
+    
+    .intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .intro p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    /* Controls Section */
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    
+    #searchInput, #sortSelect {
+      padding: 0.8rem 1rem;
+      border: 2px solid #ddd;
+      border-radius: 50px;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+    
+    #searchInput {
+      flex: 1;
+      min-width: 250px;
+      max-width: 500px;
+    }
+    
+    #searchInput:focus, #sortSelect:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(42, 127, 98, 0.2);
+    }
+    
+    #sortSelect {
+      background-color: var(--white);
+      cursor: pointer;
+    }
+    
+    /* Hospital List */
+    .hospital-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .hospital-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-left: 4px solid var(--primary);
+    }
+    
+    .hospital-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .hospital-card h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    
+    .hospital-card p {
+      margin-bottom: 0.8rem;
+      color: var(--gray);
+    }
+    
+    .hospital-card strong {
+      color: var(--dark);
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: var(--white);
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    
+    footer p {
+      margin-bottom: 0;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        position: fixed;
+        right: 0;
+        top: 70px;
+        background-color: var(--primary);
+        height: calc(100vh - 70px);
+        width: 50%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        transform: translateX(100%);
+        transition: var(--transition);
+      }
+      
+      .nav-links.nav-active {
+        transform: translateX(0);
+      }
+      
+      .nav-links li {
+        margin-left: 0;
+        opacity: 0;
+      }
+      
+      .burger {
+        display: block;
+      }
+      
+      .intro h1 {
+        font-size: 2rem;
+      }
+      
+      .intro p {
+        font-size: 1rem;
+      }
+      
+      .controls {
+        flex-direction: column;
+      }
+      
+      #searchInput, #sortSelect {
+        width: 100%;
+      }
+      
+      .hospital-list {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Animation */
+    @keyframes navLinkFade {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .toggle .line1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .toggle .line2 {
+      opacity: 0;
+    }
+    
+    .toggle .line3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">SL HealthCare</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="hospitals.html" class="active">Hospitals</a></li>
-                <li><a href="healthtips.html">health-tips</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <nav>
+                <div class="logo"><i class="fas fa-heartbeat"></i>SL HealthCare</div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="healthtips.html">Health Tips</a></li>
+                    <li><a href="hospitals.html" class="active">Hospitals</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
         <section class="intro">
             <h1>Hospitals in Sierra Leone</h1>
-            <p>Find key hospitals across Sierra Leone with essential details.</p>
+            <p>Find key hospitals across Sierra Leone with essential details and contact information.</p>
         </section>
 
         <section class="controls">
@@ -40,6 +352,7 @@
                 <h2>Connaught Hospital</h2>
                 <p><strong>Location:</strong> Freetown</p>
                 <p><strong>Type:</strong> Referral and Teaching Hospital</p>
+                <p><strong>Services:</strong> Emergency, Surgery, Pediatrics, Maternity</p>
                 <p><strong>Contact:</strong> +232 22 222222</p>
             </article>
 
@@ -47,6 +360,7 @@
                 <h2>Bo Government Hospital</h2>
                 <p><strong>Location:</strong> Bo</p>
                 <p><strong>Type:</strong> Regional Referral Hospital</p>
+                <p><strong>Services:</strong> General Medicine, Surgery, Laboratory</p>
                 <p><strong>Contact:</strong> +232 22 333333</p>
             </article>
 
@@ -54,17 +368,113 @@
                 <h2>Makeni Government Hospital</h2>
                 <p><strong>Location:</strong> Makeni</p>
                 <p><strong>Type:</strong> District Hospital</p>
+                <p><strong>Services:</strong> Outpatient, Maternity, Vaccination</p>
                 <p><strong>Contact:</strong> +232 22 444444</p>
             </article>
 
-            <!-- Add more hospital cards here -->
+            <article class="hospital-card" data-name="Lumley Government Hospital" data-location="Freetown">
+                <h2>Lumley Government Hospital</h2>
+                <p><strong>Location:</strong> Freetown</p>
+                <p><strong>Type:</strong> District Hospital</p>
+                <p><strong>Services:</strong> General Practice, Pediatrics, Pharmacy</p>
+                <p><strong>Contact:</strong> +232 22 555555</p>
+            </article>
+
+            <article class="hospital-card" data-name="Kenema Government Hospital" data-location="Kenema">
+                <h2>Kenema Government Hospital</h2>
+                <p><strong>Location:</strong> Kenema</p>
+                <p><strong>Type:</strong> Regional Referral Hospital</p>
+                <p><strong>Services:</strong> Emergency, Surgery, Infectious Diseases</p>
+                <p><strong>Contact:</strong> +232 22 666666</p>
+            </article>
+
+            <article class="hospital-card" data-name="Princess Christian Maternity Hospital" data-location="Freetown">
+                <h2>Princess Christian Maternity Hospital</h2>
+                <p><strong>Location:</strong> Freetown</p>
+                <p><strong>Type:</strong> Specialized Maternity Hospital</p>
+                <p><strong>Services:</strong> Prenatal, Delivery, Postnatal Care</p>
+                <p><strong>Contact:</strong> +232 22 777777</p>
+            </article>
         </section>
     </main>
 
     <footer>
-        <p>© 2025 Sierra Leone Health Care Portal. All rights reserved.</p>
+        <div class="container">
+            <p>© 2025 Sierra Leone Health Care Portal. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="hospitals.js"></script>
+    <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+    const navLinks = document.querySelectorAll('.nav-links li');
+    
+    // Mobile menu toggle
+    burger.addEventListener('click', () => {
+        // Toggle Nav
+        nav.classList.toggle('nav-active');
+        
+        // Animate Links
+        navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+                link.style.animation = '';
+            } else {
+                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+            }
+        });
+        
+        // Burger Animation
+        burger.classList.toggle('toggle');
+    });
+
+    // Search functionality
+    const searchInput = document.getElementById('searchInput');
+    const hospitalCards = document.querySelectorAll('.hospital-card');
+
+    searchInput.addEventListener('input', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        hospitalCards.forEach(card => {
+            const name = card.dataset.name.toLowerCase();
+            const location = card.dataset.location.toLowerCase();
+            
+            if (name.includes(searchTerm) || location.includes(searchTerm)) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+
+    // Sort functionality
+    const sortSelect = document.getElementById('sortSelect');
+    const hospitalList = document.getElementById('hospitalList');
+
+    sortSelect.addEventListener('change', () => {
+        const sortValue = sortSelect.value;
+        const cards = Array.from(hospitalCards);
+        
+        cards.sort((a, b) => {
+            const aValue = sortValue.includes('name') ? a.dataset.name : a.dataset.location;
+            const bValue = sortValue.includes('name') ? b.dataset.name : b.dataset.location;
+            
+            if (sortValue.includes('asc')) {
+                return aValue.localeCompare(bValue);
+            } else {
+                return bValue.localeCompare(aValue);
+            }
+        });
+        
+        // Clear current list
+        while (hospitalList.firstChild) {
+            hospitalList.removeChild(hospitalList.firstChild);
+        }
+        
+        // Add sorted cards
+        cards.forEach(card => {
+            hospitalList.appendChild(card);
+        });
+    });
+    </script>
 </body>
 </html>
