@@ -1,0 +1,179 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fa;
+  padding-top: 80px;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #0052cc;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+.nav-links li a {
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.nav-links li a:hover {
+  color: #ffcc00;
+}
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://images.unsplash.com/photo-1588776814546-b01e064b8a02?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+.hero-content {
+  background-color: rgba(0, 82, 204, 0.7);
+  padding: 2rem;
+  border-radius: 10px;
+  display: inline-block;
+}
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.btn {
+  background-color: #ffcc00;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Services */
+.services {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.services h3 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+.service-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+.card h4 {
+  margin-bottom: 0.5rem;
+  color: #0052cc;
+}
+
+/* About Section */
+.about {
+  background-color: #eef1f6;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.about h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.about p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #0052cc;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background-color: #0052cc;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    display: none;
+    align-items: center;
+    padding: 1rem 0;
+  }
+  .nav-links.nav-active {
+    display: flex;
+  }
+  .burger {
+    display: flex;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}

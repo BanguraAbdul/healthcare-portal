@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sierra Leone Healthcare Portal</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <h1 class="logo">SL Health Portal</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Health Tips</a></li>
+          <li><a href="#">Hospitals</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Welcome to Sierra Leone's Healthcare Resource Portal</h2>
+      <p>Your one-stop access to trusted health tips, hospital data, and emergency care information.</p>
+      <a href="#" class="btn">Explore Services</a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section class="services">
+    <h3>Our Key Resources</h3>
+    <div class="service-cards">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2920/2920215.png" alt="Health Tips Icon" />
+        <h4>Health Tips</h4>
+        <p>Stay informed with daily tips on nutrition, hygiene, and disease prevention tailored to local needs.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2965/2965567.png" alt="Hospital Icon" />
+        <h4>Hospital Directory</h4>
+        <p>Find hospitals and health centers across Sierra Leone by location and available services.</p>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/3050/3050466.png" alt="Emergency Icon" />
+        <h4>Emergency Support</h4>
+        <p>Get quick access to ambulance services, hotlines, and emergency instructions when it matters most.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <h3>Our Mission</h3>
+    <p>We aim to improve public health awareness and accessibility by providing accurate, centralized healthcare information. Empowering citizens through digital tools is at the core of our mission.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Sierra Leone Health Portal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const burger = document.querySelector('.burger');
+    const nav = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', () => {
+      nav.classList.toggle('nav-active');
+    });
+  </script>
+
+</body>
+</html>
